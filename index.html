@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <title>UnScript 2020 Hackathon</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/devfolio.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src = "js/devfolio.js"></script>
+    <script src = "js/timer.js"></script>
+
+    <style>
+      #demo {
+        font-size: 40px;
+      }
+
+      #body{
+        background-image: url("images/hackathon.jpg");
+      }
+      .accordion {
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+/* .active, .accordion:hover {
+  background-color: red; 
+} */
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: transparent;
+  overflow: hidden;
+}
+#aboutmargin {
+  margin-top: -100px;
+}
+#mainmargin {
+  margin-top: 200px ;
+}
+#footermargin {
+  margin-top: 80px;
+  margin-bottom: -100px;
+}
+#copyrights {
+  margin-bottom: -130px;
+}
+
+{
+  box-sizing: border-box;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container_one {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container_one::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -16px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0%;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: transparent;
+  position: relative;
+  border-radius: 6px;
+  margin-left:120px
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container_one {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container_one::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+#aligndaydate {
+  margin-left: 50px;
+}
+#aboutbox {
+  background-color: transparent;
+  width: 1000px;
+  border-style: groove;
+  padding: 50px;
+  margin: 20px;
+}
+#domainbox {
+  width: 250px;
+  border-style: double;
+  padding: 50px;
+  height: 350px;
+}
+    </style>
+
+  </head>
+  <body id="body">
+  
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+    <header class="site-navbar py-3" role="banner">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-11 col-xl-2">
+            <a href="index.html">
+            <img src="E:\Rego\CodeLabsCRCE\unscript2k20\public\images\UnScriptLogo(Transparent).png" height="100px" width="80px" style="margin-top: -10px;"></a>
+            <!-- <h1 class="mb-0"><a href="index.html"><font color="blue">U</font><span><font color="purple">N</font></span><span><font color="green">S</font></span><span><font color="orange">C</font></span><span><font color="yellow">R</font></span><span><font color="blue">I</font></span><span><font color="green">P</font></span><span><font color="red">T</font></span><span><font color="orange">2k20</font></span></a></h1> -->
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#domains">Domains</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#faq">FAQs</a></li>
+                </li>
+              </ul>
+            </nav>
+        </div>
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="site-section site-hero" id="home">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-10">
+              <p id="demo"></p> 
+            <h1 class="d-block mb-4" data-aos-delay="100"><font color="blue">U</font><span><font color="purple">N</font></span><span><font color="green">S</font></span><span><font color="orange">C</font></span><span><font color="yellow">R</font></span><span><font color="blue">I</font></span><span><font color="green">P</font></span><span><font color="red">T</font></span><span><font color="orange">2k20</font></span></h1>
+            <span class="d-block mb-5 caption" data-aos="fade-up" data-aos-delay="200" >21st-22nd March, 2020</span>
+            <a href="#" class="d-block mb-5 caption" data-aos="fade-up" data-aos-delay="500"><span><button id="devfolio-apply-now"><svg class="logo" xmlns="http://www.w3.org/2000/svg" fill="#fff"viewBox="0 0 115.46 123.46" style="height:24px;width:24px;margin-right:8px"><path d="M115.46 68a55.43 55.43 0 0 1-50.85 55.11S28.12 124 16 123a12.6 12.6 0 0 1-10.09-7.5 15.85 15.85 0 0 0 5.36 1.5c4 .34 10.72.51 20.13.51 13.82 0 28.84-.38 29-.38h.26a60.14 60.14 0 0 0 54.72-52.47c.05 1.05.08 2.18.08 3.34z" /><path d="M110.93 55.87A55.43 55.43 0 0 1 60.08 111s-36.48.92-48.58-.12C5 110.29.15 104.22 0 97.52l.2-83.84C.38 7 5.26.94 11.76.41c12.11-1 48.59.12 48.59.12a55.41 55.41 0 0 1 50.58 55.34z"/></svg>Apply with Devfolio</button></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aboutmargin" id="aboutmargin">
+    <div class="site-section" id="about">
+      <div class="container">
+          <!-- <div class="row mb-5"> -->
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="site-section-heading">
+                  <h2>About UnScript 2k20</h2>
+                </div>
+              </div>
+              <div class="aboutbox" id="aboutbox">
+                <h4>UnScript, Fr.CRCE's annual state level hackathon has entered in its 3th edition</h4>
+                <h4>The hackathon includes: </h4>
+              <ul>
+                <li> 24 hours coding</li>
+                <li> 4 domains</li>
+                <li> 50+ Teams</li>
+                <li>Lots of learning with a competitive atmosphere</li>
+              </ul>
+              <h4>UnScript wishes in bringing opportunities to all coders to have a hands-on experience on various domains and bring the best out of them.</h4>
+              </div>
+      </div>
+    </div> 
+  </div>
+
+  <div class="mainmargin" id="mainmargin">
+    <div class="site-section" id="domains">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="site-section-heading">
+              <h2>Our Domains</h2>
+            </div>
+          </div>
+          <div class="col-lg-5 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="200">
+          </div>
+        </div>
+
+        <div class="domainbox" id="domainbox" style="outline-style: double; margin-right: 20px;">
+          <img src="E:\Rego\CodeLabsCRCE\unscript2k20\public\images\blockchain.png" style="margin-left: -40px; width:220px;height:175px;">
+          <br><br><br>
+          <span><center>Blockchain</center></span>
+        </div>
+
+        <div class="domainbox" id="domainbox" style="outline-style: double; margin-top: -350px; margin-left: 270px; margin-right: 20px;">
+          <img src="E:\Rego\CodeLabsCRCE\unscript2k20\public\images\iot.png" style="width:150px;height:200px;">
+          <br><br>
+          <span><center>IoT</center></span>
+        </div>
+
+        <div class="domainbox" id="domainbox" style="outline-style: double; margin-top: -350px; margin-left: 540px; margin-right: 20px;">
+          <img src="E:\Rego\CodeLabsCRCE\unscript2k20\public\images\ML.png" style="width:150px;height:170px;">
+          <br><br><BR>
+          <span><center>AI/ML</center></span>
+        </div>
+
+        <div class="domainbox" id="domainbox" style="outline-style: double; margin-top: -350px; margin-left: 810px; margin-right: 20px;">
+          <img src="E:\Rego\CodeLabsCRCE\unscript2k20\public\images\webapp.png" style="width:150px;height:200px;">
+          <br><br>
+          <span><center>Web/Mobile App</center></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="mainmargin" id="mainmargin">
+    <div class="site-section" id="schedule">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4" data-aos="fade-up">
+            <div class="site-section-heading">
+              <h2>Schedule</h2>
+            </div>
+          </div>   
+        </div>
+
+          <p class="h3 text-center">Day 1 - 21st March 2020</p>
+         
+        <div class="timeline">
+          <div class="container_one left">
+            <div class="content">
+              <h2>8:30 AM</h2>
+              <h3>Registration</h3>
+            </div>
+          </div>
+          <div class="container_one right">
+            <div class="content">
+              <h2>9:30 AM</h2>
+              <h3>Inaugral Ceremony</h3>
+            </div>
+          </div>
+          <div class="container_one left">
+            <div class="content">
+              <h2>11:00 AM</h2>
+              <h3>Coding Begins!</h3>
+            </div>
+          </div>
+          <div class="container_one right">
+            <div class="content">
+              <h2>2:00 PM</h2>
+              <h3>Lunch</h3>
+            </div>
+          </div>
+          <div class="container_one left">
+            <div class="content">
+              <h2>4:00 PM</h2>
+              <h3>Mentoring Session</h3>
+            </div>
+          </div>
+          <div class="container_one right">
+            <div class="content">
+              <h2>6:00 PM</h2>
+              <h3>First Judging Round</h3>
+            </div>
+          </div>
+          <div class="container_one left">
+            <div class="content">
+              <h2>9:00 PM</h2>
+              <h3>Dinner</h3>
+            </div>
+          </div>
+        </div><br>
+
+            <p class="h3 text-center">Day 2 - 22nd March 2020</p>
+
+          <br>
+          <div class="timeline">
+          <div class="container_one right">
+            <div class="content">
+              <h2>12:00 AM</h2>
+              <h3>Midnight Surprise!</h3>
+            </div>
+          </div>
+          <div class="container_one left">
+            <div class="content">
+              <h2>8:30 AM</h2>
+              <h3>Breakfast</h3>
+            </div>
+          </div>
+          <div class="container_one right">
+            <div class="content">
+              <h2>9:00 AM</h2>
+              <h3>Second Judging Round</h3>
+            </div>
+          </div>
+          <div class="container_one left">
+            <div class="content">
+              <h2>10:45 AM</h2>
+              <h3>Shortlisting of Top 10 Teams</h3>
+            </div>
+          </div>
+          <div class="container_one right">
+            <div class="content">
+              <h2>11:00 AM</h2>
+              <h3>Presentation & Final Judging Round</h3>
+            </div>
+          </div>
+          <div class="container_one left">
+            <div class="content">
+              <h2>1:00 PM</h2>
+              <h3>Announcing the results</h3>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="mainmargin" id="mainmargin">
+    <div class="site-section" id="sponsors">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4 ">
+            <div class="site-section-heading" data-aos="fade-up">
+              <h2>Sponsors</h2>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <center><p style="font-size: 30px; font-weight: bold;">Platinum sponsor</p></center>
+          <div class="" data-aos="fade" data-aos-delay="200" style="padding-top: 60px; padding-bottom: 70px; width: 400px; height: 200px; margin-left: 350px; margin-top: -20px;">
+            <center><a href="https://devfolio.co/">
+            <img src="images/Devfolio - White.png" alt="Image" class="img-fluid">
+          </a></center>
+          </div>
+        </div>
+        <div class="container">
+          <center><p style="font-size: 30px; font-weight: bold;">Gold sponsors</p></center><br><br>
+          <div class="row mb-10">
+          </div>
+          <div class="row mb-5">
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="500" height="100px" >
+              <a href="https://matic.network/">
+                <img src="images/newmatic.png" alt="Image" class="img-fluid" style="border-radius: 10px; width: 100%; height: 150px; padding-bottom: 70px;">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300" >
+              <a href="https://fold.money/">
+                <img src="images/Logo.svg" alt="Image" class="img-fluid" style="border-radius: 10px; width: 100%; height: 150px; padding-bottom: 70px;">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
+              <img src="images/client-5.png" alt="Image" class="img-fluid" style="border-radius: 10px; width: 100%; height: 200px; padding-bottom: 70px;">
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="400">
+              <img src="images/skinzy.png" alt="Image" class="img-fluid" style="border-radius: 10px; width: 100%; height: 200px; padding-bottom: 70px;">
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="400">
+              <a href="https://www.wolfram.com/language/">
+              <img src="images/wolf.PNG" alt="Image" class="img-fluid" style="border-radius: 10px; width: 100%; height: 150px; padding-bottom: 40px;">
+            </a>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="400">
+              <a href="https://cloudsploit.com/">
+                <img src="images/cloud.png" alt="Image" class="img-fluid" style="border-radius: 10px; width: 100%; height: 150px; padding-bottom: 40px;">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="400">
+              <a href="https://cloudsploit.com/">
+                <img src="images/xinfin.png" alt="Image" class="img-fluid" style="margin-left: 60px; border-radius: 10px; width: 200px; height: 250px; padding-bottom: 40px;">
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="400">
+              <a href="https://cloudsploit.com/">
+                <img src="images/bugsee.png" alt="Image" class="img-fluid" style="border-radius: 10px; width: 200px; height: 250px; margin-left: 70px; padding-bottom: 40px;">
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        <div class="container">
+          <center><p style="font-size: 30px; font-weight: bold;">Gifting Partner</p></center><br>
+          <div class="row mb-10">
+          </div>
+          <div class="row mb-5">
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="500" height="100px" >
+              <a href="https://www.thesouledstore.com/">
+                <img src="images/thesouledstore.png" alt="Image" class="img-fluid" style="padding-top: 5px; padding-bottom: 5px; width: 270px; height: 290px; margin-top: -60px; margin-left: 400px; margin-bottom: -70px;">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="mainmargin" id="mainmargin">
+    <div class="site-section" id="faq">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4 ">
+            <div class="site-section-heading" data-aos="fade-up">
+              <h2>FAQ's</h2>
+            </div>
+          </div>
+        </div>
+        <button class="accordion">Q. What is a Hackathon?</button>
+<div class="panel">
+  <p>A hackathon is an event where in participating teams are provided different real-life problems and they have to design a technological solution to anyone of the problems given in the given time limit. The final product developed should be usable in real life.</p>
+</div>
+
+<button class="accordion">Q. Can I code before coming to the hackathon?</button>
+<div class="panel">
+  <p>You can come prepared with half baked codes, write your own APIs and modules.</p>
+</div>
+
+<button class="accordion">Q. How do I form a team?</button>
+<div class="panel">
+  <p>Each team should comprise of a maximum of 3 members including the team leader. Team members can be from different colleges.</p>
+</div>
+      
+<button class="accordion">Q. How do I register for UnScript 2k20?</button>
+<div class="panel">
+  <p>All team members need to register on Devfolio (Link mentioned at the top). Deadline for the same is 15th March 2020.</p>
+</div>
+
+<button class="accordion">Q. What if I've never been to a hackathon before?</button>
+<div class="panel">
+  <p>For beginners, it will be a great start for working on problem statements where mentors from Tech Industries like MSCI, BrowserStack, TIAA, etc will be there to help you out with your projects. So, there is nothing to worry about any errors while you work. You will also have a good exposure to a coding atmosphere. </p>
+</div>
+
+<button class="accordion">Q. What should I bring?</button>
+<div class="panel">
+  <p>Participants are required to get their own laptops with all the necessary softwares installed, chargers, spike guard, student ID, Gov. ID and can get a pillow and blankets as per your convenience.</p>
+</div>
+
+<button class="accordion">Q. When will the problem statements be released?</button>
+<div class="panel">
+  <p>For IoT domain, problem statements will be released 1 day prior to the main event.</p>
+</div>
+
+<button class="accordion">Q. How will we be notified about the selection?</button>
+<div class="panel">
+  <p>Selected teams will be notified on Devfolio as well as get a confirmation email. Note: Registration does not confirm selection. </p>
+</div>
+
+      </div>
+    </div>
+    </div>
+
+    <div class="footermargin" id="footermargin">
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <h2 class="footer-heading text-uppercase mb-2">About Event</h2>
+            <p>UnScript 2020 is the annual 24-hour hackathon held by Fr. CRCE which consists of 4 domains and a prize for each domain</p>
+          </div>
+          <div class="col-md-3 ml-auto">
+            <h2 class="footer-heading text-uppercase mb-4">Quick Links</h2>
+            <ul class="list-unstyled">
+              <li><a href="#about">About</a></li>
+              <li><a href="#domains">Domains</a></li>
+              <li><a href="#schedule">Schedule</a></li>
+              <li><a href="#sponsors">Sponsors</a></li>
+              <li><a href="#faq">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h2 class="footer-heading text-uppercase mb-4">Connect with Us</h2>
+            <p>
+              <p>Address : Fr. Conceicao Rodrigues College of Engineering,<br> Bandstand, Bandra(W), Mumbai-400050.</p><br>
+              <p>Princeton Baretto : +91 83694 04826<br>
+              Sumit Gupta : +91 8097453379</p><br>
+              <p>Email : codelabscrce@gmail.com </p>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights" id="copyrights">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="border-top ">
+          <p>
+            © Copyright UnScript. All Rights Reserved</br>
+            Designed by CodeLabsCRCE & Mozilla Campus Club CRCE
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</footer>
+</div>
+    
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+  <script>
+  acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+</script>
+  </body>
+</html>
